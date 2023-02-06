@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body class="container">
+    <h1 class='header'>Task Manager</h1>
+    <div class='input_container'>
+      <input class='input' type="text" placeholder='Enter Task' name='input'></input>
+      <button class='btn'>Submit</button>
+    </div>
+    <div class="alert"></div>
+    <div class='task_container visible'>
+        <div class="tasks"></div>
+        <button class="clear_all visible">Clear All</button>
+    </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+    <script src="./app.js"></script>
+</body>
+</html>

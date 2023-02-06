@@ -1,0 +1,56 @@
+.edit_container {
+    width : 500px;
+    margin: auto;
+    margin-top: 200px;
+    text-align: center;
+    box-shadow: 0px 0px 5px black;
+    padding : 30px;
+}
+
+.btn {
+    border: none;
+    box-shadow: 0px 0px 3px black;
+    cursor: pointer;
+    background-color: rgb(96, 97, 99);
+    color: honeydew;
+    margin : 5px;
+    padding : 6px;
+}
+
+.btn:hover {
+    background-color: rgb(41, 40, 40); 
+    padding : 5px;
+}
+
+.header {
+    color: aqua;
+    text-shadow: 1px 1px 3px black;
+}
+
+.id {
+    color: black;
+}
+
+.input {
+    width : 300px;
+    padding : 5px;
+    border: none;
+    outline : none;
+    box-shadow: 0px 0px 3px black;
+    transition: 1s;
+}
+
+.input:focus {
+    width : 400px;
+    padding : 10px;
+    border: 2px solid aqua;
+    box-shadow: 0px 0px 0px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 0px black;
+    font-size: 16px;
+}
