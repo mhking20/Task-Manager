@@ -1,6 +1,10 @@
 
 /* Body */
 
+body {
+    background-color: rgb(102, 97, 91);
+}
+
 .container {
     width : 90%;
     margin : auto;
@@ -9,6 +13,15 @@
 }
 
 /* Task Input */
+
+.input_container {
+    background-color: aliceblue;
+    box-shadow: 0px 0px 5px 5px aliceblue;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
 
 .header {
     color: aqua;
@@ -84,15 +97,16 @@
     border : none;
     box-shadow: 0px 0px 2px black;
     border-radius: 5px;
-    cursor : pointer;
 }
 
 .dell_btn:hover {
-    font-size: 18px;;
+    font-size: 18px;
+    cursor : pointer;
 }
 
 .edit_btn:hover {
-    font-size: 18px;;
+    font-size: 18px;
+    cursor : pointer;
 }
 
 /* Task Container */
@@ -105,6 +119,8 @@
     margin-top: 30px;
     max-height: 500px;
     overflow: auto;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 5px 5px aliceblue;
 
 }
 
@@ -124,12 +140,10 @@ a {
     margin : 20px;
 }
 
-.visible {
-    visibility: hidden;
-}
 
 .clear_all:hover {
     font-size: 18px;
+    cursor: pointer;
 }
 
 /* Alert */
@@ -137,7 +151,7 @@ a {
 .alert {
     width : 300px;
     margin : auto;
-    margin-top : 10px;
+    margin-top : 20px;
     box-shadow: 0px 0px 5px black;
     font-size: 18px;
 }
@@ -164,4 +178,19 @@ a {
     text-shadow: 0px 0px 0px black;
     box-shadow: 0px 0px 5px 5px red;
     padding : 5px;
+}
+
+.loading {
+    padding : 50px;
+    margin-top : 40px;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 5px 5px aliceblue;
+}
+
+.loading h1 {
+    font-size: 40px;
+}
+
+.hidden {
+    display: none;
 }

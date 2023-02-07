@@ -38,7 +38,7 @@ const patchtask = async (req, res) => {
 
 const deletealltask = async (req , res) => {
     try {
-      const task = await model.deleteMany();
+      const task = await model.deleteMany({status : true});
       res.status(200).json({task})
     } catch (error) {
       console.log(error);

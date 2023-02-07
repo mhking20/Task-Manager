@@ -3,23 +3,23 @@ const getel = (selector) => {
     return el
 }
 
-function showalert({color , text}) {
-    getel(".alert").classList.remove("visible")
-     getel(".alert").classList.add(color);
-     getel(".alert").textContent = text
+function showalert({ color, text }) {
+    getel(".alert").classList.remove("success_alert", "warning_alert", "danger_alert", "hidden");
+    getel(".alert").textContent = "";
+    getel(".alert").classList.add(color);
+    getel(".alert").textContent = text
 }
 
 const getalltask = async () => {
-   
     try {
         const { data: { task } } = await axios.get("/api/v1/task");
-        getel(".task_container").classList.remove("visible")
-        if(task.length > 0){
-            getel(".clear_all").classList.remove("visible")
-            getel(".task_container").classList.remove("visible")
-        }else{
-            getel(".clear_all").classList.add("visible");
-            getel(".task_container").classList.add("visible")
+        getel(".task_container").classList.remove("hidden")
+        if (task.length > 0) {
+            getel(".clear_all").classList.remove("hidden")
+            getel(".task_container").classList.remove("hidden")
+        } else {
+            getel(".clear_all").classList.add("hidden");
+            getel(".task_container").classList.add("hidden")
         }
         const alltask = task.map((item) => {
             const { _id, Task } = item;
@@ -36,53 +36,69 @@ const getalltask = async () => {
 
 
 getel('.btn').addEventListener("click", async () => {
+    getel(".hideable").classList.add("hidden");
+    getel(".loading").classList.remove("hidden");
     const Task = getel(".input").value;
-    try {
-        await showalert({color : "success_alert" , text : "Successfully Item Added"});
+    try {    
         await axios.post("/api/v1/task", { Task });
+        showalert({ color: "success_alert", text: "Successfully Item Added" });
         getalltask();
         getel(".input").value = ""
-      
         setTimeout(() => {
-            getel(".alert").classList.add("visible")
+            getel(".hideable").classList.remove("hidden");
+            getel(".loading").classList.add("hidden")
+        }, 1000);
+        setTimeout(() => {
+            getel(".alert").classList.add("hidden")
             getel(".alert").classList.remove("success_alert")
-        }, 3000);
+        }, 1000);
     } catch (error) {
         console.log(error);
     }
 })
 
 
-getel(".task_container").addEventListener("click", async (e) => {
+getel(".tasks").addEventListener("click", async (e) => {
+    getel(".hideable").classList.add("hidden");
+    getel(".loading").classList.remove("hidden");
     id = e.target.dataset.id
-    console.log(id);
-    try {
-        await showalert({color : "danger_alert" , text : "Item Deleted"});
+    try {  
         await axios.delete(`/api/v1/task/${id}`);
+        showalert({ color: "danger_alert", text: "Item Deleted" });
         getalltask();
         setTimeout(() => {
-            getel(".alert").classList.add("visible")
+            getel(".hideable").classList.remove("hidden");
+            getel(".loading").classList.add("hidden")
+        }, 1000);
+        setTimeout(() => {
+            getel(".alert").classList.add("hidden")
             getel(".alert").classList.remove("danger_alert")
-        }, 3000);
+        }, 1000);
     } catch (error) {
         console.log(error);
     }
 });
 
-getel(".clear_all").addEventListener("click" , async () => {
+getel(".clear_all").addEventListener("click", async () => {
+    getel(".hideable").classList.add("hidden");
+    getel(".loading").classList.remove("hidden");
     try {
-        await  showalert({color : "warning_alert" , text : "You Cleared The Items"})
         await axios.delete('/api/v1/task');
+        showalert({ color: "warning_alert", text: "You Cleared The Items" });
         setTimeout(() => {
-            getel(".alert").classList.add("visible");
-            getel(".alert").classList.remove("warning_alert")
-        } , 3000)
+            getel(".hideable").classList.remove("hidden");
+            getel(".loading").classList.add("hidden")
+        }, 1000);
+        setTimeout(() => {
+            getel(".alert").classList.add("hidden");
+            getel(".alert").classList.remove("warning_alert");
+            console.log("this is warning");
+        }, 1000)
     } catch (error) {
         console.log(error)
     }
 })
 
-
 setInterval(() => {
-    getalltask();
-}, 1000)
+    getalltask()
+} , 1000)
