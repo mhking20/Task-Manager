@@ -1,5 +1,5 @@
 {
-  "name": "Task Manager",
+  "name": "Task_Manager",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,6 +24,6 @@
     "railway": "^2.0.17"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   }
 }
