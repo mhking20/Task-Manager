@@ -4,17 +4,17 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
-app.use(express.static("./public"));
+app.use(express.static("./"));
 app.use(express.json());
 
 
 const dotenv = require("dotenv");
 dotenv.config();
 
-const connectdb = require("./db/connectdb")
+const connectdb = require("../db/connectdb")
 const port = 3001;
 
-const router = require("./router/router")
+const router = require("../router/router")
 app.use("/api/v1/task", router)
 
 const start = async () => {
