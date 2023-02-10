@@ -22,7 +22,7 @@ app.use("/api/v1/task", router)
 
 const start = async () => {
     try {
-        await connectdb(process.env.URL);
+        await connectdb("mongodb+srv://mian_taimoor_20:king@mycluster.edewh2u.mongodb.net/Task_Manager?retryWrites=true&w=majority");
         console.log('db connected');
         app.listen(port, () => {
             console.log(`The Server Is Running on port ${port}`);
