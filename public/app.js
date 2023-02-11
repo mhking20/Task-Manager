@@ -25,7 +25,7 @@ const getalltask = async () => {
             const { _id, Task } = item;
             return ` 
                 <div class="singletask" key=${_id}>
-                <h1 class="singletaskheader">${Task}</h1><div class="btn_container"><a href="./edit.html?id=${_id}" class="edit_btn">Edit</a><a data-id=${_id} class="dell_btn">Dell</a></div>
+                <h1 class="singletaskheader">${Task}</h1><div class="btn_container"><a href="./edit.html?id=${_id}"><button class="edit_btn">Edit</button></a><button data-id=${_id} class="dell_btn">Dell</button></div>
                 </div>`
         }).join('');
         getel(".tasks").innerHTML = alltask

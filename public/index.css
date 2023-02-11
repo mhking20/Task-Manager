@@ -48,15 +48,23 @@ body {
 }
 
 .singletask {
-  display: flex;
   padding: 10px;
   margin: 10px;
   box-shadow: 0px 0px 2px black;
+  display: flex;
 }
 
 .singletask:hover {
   background-color: burlywood;
   padding: 20px;
+}
+
+.singletaskheader {
+  width: 75%;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0% 3%;
 }
 
 .btn {
@@ -75,9 +83,11 @@ body {
 }
 
 .btn_container {
-  margin-left: auto;
+  margin: auto;
   display: flex;
-  padding : 2%;
+  padding-right: 60%;
+  width: 30%;
+  padding-right: 20%;
 }
 
 .edit_btn {
@@ -109,7 +119,7 @@ body {
 }
 
 .edit_btn:hover {
-    font-size: x-large;
+  font-size: x-large;
   cursor: pointer;
 }
 
@@ -219,6 +229,9 @@ a {
   .task_container {
     width: 100%;
   }
+  .btn_container{
+    padding-right: 40%;
+  }
   .input {
     width: 70%;
   }
@@ -239,6 +252,12 @@ a {
   .input:focus {
     width: 90%;
   }
+  .task_container{
+    padding: 0%;
+  }
+  .btn_container{
+    padding-right: 40%;
+  }
   .dell_btn {
     font-size: large;
     padding: 10px;
@@ -250,25 +269,34 @@ a {
   .singletask {
     font-size: small;
   }
-  .clear_all{
+  .clear_all {
     font-size: small;
   }
 }
 
-@media only screen and (max-width : 300px){
-    .task_container {
-        padding: 0%;
-    }
-    .singletask {
-        font-size: xx-small;
-    }
-    .dell_btn{
-        font-size: xx-small;
-    }
-    .edit_btn {
-        font-size: xx-small;
-    }
-    .clear_all {
-        font-size: x-small;
-    }
+@media only screen and (max-width: 300px) {
+  .input {
+    width: 85%;
+  }
+  .input:focus {
+    width: 90%;
+  }
+  .form {
+    padding: 5%;
+  }
+  .task_container{
+    padding: 0%;
+  }
+  .singletask {
+    font-size: xx-small;
+  }
+  .dell_btn {
+    font-size: xx-small;
+  }
+  .edit_btn {
+    font-size: xx-small;
+  }
+  .clear_all {
+    font-size: x-small;
+  }
 }
