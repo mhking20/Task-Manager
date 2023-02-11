@@ -17,7 +17,7 @@ dotenv.config();
 const connectdb = require("./db/connectdb")
 const port = 3001;
 
-const router = require("./router/router")
+const router = require("./router/router");
 app.use("/api/v1/task", router)
 
 const start = async () => {

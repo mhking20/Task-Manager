@@ -25,7 +25,7 @@ const getalltask = async () => {
             const { _id, Task } = item;
             return ` 
                 <div class="singletask" key=${_id}>
-                <h1 class="singletaskheader">${Task}</h1><div class="btn_container"><button class="edit_btn"><a href="./edit.html?id=${_id}">Edit</a></button><button data-id=${_id} class="dell_btn">Dell</button></div>
+                <h1 class="singletaskheader">${Task}</h1><div class="btn_container"><a href="./edit.html?id=${_id}" class="edit_btn">Edit</a><a data-id=${_id} class="dell_btn">Dell</a></div>
                 </div>`
         }).join('');
         getel(".tasks").innerHTML = alltask
@@ -35,7 +35,8 @@ const getalltask = async () => {
 }
 
 
-getel('.btn').addEventListener("click", async () => {
+getel('.form').addEventListener("submit", async (e) => {
+    e.preventDefault();
     getel(".hideable").classList.add("hidden");
     getel(".loading").classList.remove("hidden");
     const Task = getel(".input").value;
